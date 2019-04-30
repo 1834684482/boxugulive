@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -215,7 +216,7 @@ public class MainActivity extends AppCompatActivity {
             myViewHoder.mtitle.setText(list.get(i).title);
             myViewHoder.mxian.setText("");
             x.image().bind(myViewHoder.mimg,list.get(i).images.get(0));
-            myViewHoder.mimg.setOnClickListener(new View.OnClickListener() {
+            myViewHoder.Layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent=new Intent(MainActivity.this, Main2Activity.class);
@@ -236,12 +237,14 @@ public class MainActivity extends AppCompatActivity {
         public TextView mtitle;
         public ImageView mimg;
         public TextView mxian;
+        public ConstraintLayout Layout;
 
         public RecycleViewHolder(@NonNull View itemView) {
             super(itemView);
             mtitle=itemView.findViewById(R.id.title);
             mimg=itemView.findViewById(R.id.img);
             mxian=itemView.findViewById(R.id.xian);
+            Layout=itemView.findViewById(R.id.c1);
         }
     }
 
