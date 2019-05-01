@@ -12,7 +12,7 @@ public class NewsModer {
     public String ga_prefix;
     public ArrayList<String> images;
     public int type;
-    public int id;
+    public String id;
     public ArrayList<String> css;
 
 
